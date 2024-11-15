@@ -1,7 +1,8 @@
-#include <iostream>
 #include "Symbols.h"
 
-/** 
+#include <iostream>
+
+/**
  *  @brief Sobrecarga del operador <<
  *  @param[out] out
  *  @param[in] symbol
@@ -11,7 +12,7 @@ std::ostream& operator<<(std::ostream& out, const Symbol& symbol) {
   return out;
 }
 
-/** 
+/**
  *  @brief Sobrecarga del operador de comparación
  *  @param[in] symbol
  */

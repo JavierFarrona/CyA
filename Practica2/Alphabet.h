@@ -2,15 +2,16 @@
 #define ALPHABET_H
 
 #include <iostream>
-#include <vector>
-#include <string>
 #include <set>
+#include <string>
+#include <vector>
+
 #include "Symbols.h"
 
 class Alphabet {
  public:
   /// Constructores
-  Alphabet() {};
+  Alphabet(){};
   Alphabet(std::string& alphabet);
   /// Getters
   std::set<Symbol> getAlphabet() const { return alphabet_; };
@@ -27,7 +28,3 @@ class Alphabet {
 };
 
 #endif
-
-
-
-

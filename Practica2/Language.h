@@ -1,14 +1,15 @@
 #ifndef LANGUAGE_H
 #define LANGUAGE_H
 
-#include "Alphabet.h"
-#include "Symbols.h"
-#include "Chain.h"
-#include <string>
 #include <set>
+#include <string>
+
+#include "Alphabet.h"
+#include "Chain.h"
+#include "Symbols.h"
 
 class Language {
-public:
+ public:
   Language(const Alphabet& alphabet, const std::string& chain);
   Alphabet getAlphabet() const;
   std::string getChain() const;
@@ -16,9 +17,9 @@ public:
   void addChain(const std::string& chain);
   friend std::ostream& operator<<(std::ostream& out, const Language& language);
 
-private:
+ private:
   Alphabet alphabet_;
   std::string chain_;
 };
 
-#endif // LANGUAGE_H
+#endif  // LANGUAGE_H

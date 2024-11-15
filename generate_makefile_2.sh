@@ -46,7 +46,7 @@ tar:
 	    echo \"Error: Debes especificar un directorio usando 'make tar DIR=<directorio>'\"; \\
 	    exit 1; \\
 	fi
-	tar -czvf \"\$(DIR).tgz\" \"\$(DIR)\"
+	tar --exclude=\"\$(DIR).tgz\" -czvf \"\$(DIR).tgz\" \"\$(DIR)\"
 
 # Eliminación del archivo comprimido
 tar_clean:
@@ -65,6 +65,11 @@ git:
 	git add .
 	git commit -m \"\$(m)\"
 	git push
+
+# Regla para formatear todos los archivos según la guía de estilo de Google
+format:
+	@echo \"Formateando archivos según la guía de estilo de Google...\"
+	clang-format -i --style=Google *.cpp *.h
 "
 
 # Guarda el Makefile en la ruta destino

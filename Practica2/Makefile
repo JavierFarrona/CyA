@@ -51,3 +51,8 @@ git:
 	git commit -m "$(m)"
 	git push
 
+# Regla para formatear todos los archivos según la guía de estilo de Google
+format:
+	@echo "Formateando archivos según la guía de estilo de Google..."
+	clang-format -i --style=Google *.cpp *.h
+

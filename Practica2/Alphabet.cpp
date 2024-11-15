@@ -1,5 +1,6 @@
-#include <iostream>
 #include "Alphabet.h"
+
+#include <iostream>
 
 const char SPACE = ' ';
 const char COMA = ',';
@@ -40,5 +41,5 @@ void Alphabet::add(Symbol symbol) {
   if (!find(symbol)) {
     alphabet_.insert(symbol);
     ++size_;
-  } 
+  }
 }

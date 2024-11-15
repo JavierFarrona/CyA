@@ -10,7 +10,7 @@ class Symbol {
 
  public:
   /// Constructores
-  Symbol() {};
+  Symbol(){};
   Symbol(std::string& symbol) { symbol_ = symbol; };
   Symbol(char symbol) { symbol_ = symbol; };
   /// Getter
@@ -18,9 +18,11 @@ class Symbol {
   /// Setter (NO usada)
   void setSymbol(std::string symbol) { symbol_ = symbol; };
   /// Sobrecarga del operador de salida (NO usada)
-   friend std::ostream& operator<<(std::ostream& out, const Symbol& symbol);
-   /// Sobrecarga del operador de comparación
-   bool operator<(const Symbol& symbol) const { return symbol_ < symbol.getSymbol(); };
+  friend std::ostream& operator<<(std::ostream& out, const Symbol& symbol);
+  /// Sobrecarga del operador de comparación
+  bool operator<(const Symbol& symbol) const {
+    return symbol_ < symbol.getSymbol();
+  };
 };
 
 #endif

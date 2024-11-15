@@ -1,7 +1,8 @@
+#include "Chain.h"
+
+#include <cstdlib>  /// Exit
 #include <iostream>
 #include <string>
-#include <cstdlib> /// Exit
-#include "Chain.h"
 
 const char EMPTY = '&';
 const std::string EMPTY_STR = "&";
@@ -30,9 +31,10 @@ Sequence::Sequence(std::string& string) {
       if (string[i] == SPACE) {
         alphabet_.add(aux_string);
         aux_string.erase();
-      } else aux_string += string[i];
+      } else
+        aux_string += string[i];
     }
-  } else { 
+  } else {
     /// Si no, solo tenemos cadena
     sequence_string = string;
     alphabet_ = string;
@@ -48,8 +50,8 @@ Sequence::Sequence(std::string& string) {
     }
   }
   /*if (aux_string != "") {
-    std::cout << "Cadena incorrecta. Revise el fichero de entrada." << std::endl;
-    exit(EXIT_SUCCESS); 
+    std::cout << "Cadena incorrecta. Revise el fichero de entrada." <<
+  std::endl; exit(EXIT_SUCCESS);
   }*/
 }
 
@@ -60,19 +62,17 @@ std::string Sequence::getSequence() const {
     sequence += SPACE + symbol.getSymbol();
   }
   sequence += SPACE + MARKS;
-  //languaje_(alphabet_, sequence_);
+  // languaje_(alphabet_, sequence_);
   return sequence;
 }
 
-/** 
+/**
  *  @brief Calcula cuantos símbolos tiene una cadena
  *  @return Número de símbolos
  */
-int Sequence::length() { 
-  return sequence_.size();
-}
+int Sequence::length() { return sequence_.size(); }
 
-/** 
+/**
  *  @brief Calcula la cadena al revés
  *  @return String con la cadena al revés
  */
@@ -84,7 +84,7 @@ std::string Sequence::reverse() {
   return reverse_string;
 }
 
-/** 
+/**
  *  @brief Calcula los prefijos de una cadena
  *  @return String con los prefijos separados
  */
@@ -94,25 +94,25 @@ std::string Sequence::prefixes() {
     aux_string += elem.getSymbol();
     prefixes += SPACE + aux_string;
   }
-  //language_.addChain(prefixes);
+  // language_.addChain(prefixes);
   return prefixes;
 }
 
-/** 
+/**
  *  @brief Calcula los sufijos de una cadena
  *  @return String con los sufijos separados
  */
 std::string Sequence::suffixes() {
   std::string aux_string, suffixes{EMPTY};
-  for (int i = sequence_.size() - 1;  i >= 0 ; --i) {
+  for (int i = sequence_.size() - 1; i >= 0; --i) {
     aux_string = sequence_[i].getSymbol() + aux_string;
     suffixes += SPACE + aux_string;
   }
-  //language_.addChain(suffixes);
+  // language_.addChain(suffixes);
   return suffixes;
 }
 
-/** 
+/**
  *  @brief Comprueba si un string pertenece al vector
  *  @return True si pertenece
  */
@@ -124,7 +124,7 @@ bool find(std::vector<std::string> vector, std::string string) {
   return found;
 }
 
-/** 
+/**
  *  @brief Pasa de vector de string a una sola string
  *  @return Vector en string
  */
@@ -134,19 +134,19 @@ std::string vector_to_string(std::vector<std::string> vector) {
   return string_vector;
 }
 
-/** 
+/**
  *  @brief Sobrecarga del operador <<
  *  @param[out] out
  *  @param[in] sequence
  */
 std::ostream& operator<<(std::ostream& out, const Sequence& sequence) {
   out << "'";
-  
+
   out << "'";
   return out;
 }
 
-/** 
+/**
  *  @brief Sobrecarga del operador ==
  *  @param[in] sequence1
  *  @param[in] sequence2
@@ -157,6 +157,4 @@ bool operator==(const Sequence& sequence1, const Sequence& sequence2) {
   return sequence1.getSequence() == sequence2.getSequence();
 }
 
-bool Sequence::isPalindrome() {
-  return string_ == reverse();
-}
+bool Sequence::isPalindrome() { return string_ == reverse(); }

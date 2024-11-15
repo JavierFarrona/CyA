@@ -4,15 +4,16 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Symbols.h"
+
 #include "Alphabet.h"
+#include "Symbols.h"
 
 class Sequence {
  private:
   Alphabet alphabet_;
   std::vector<Symbol> sequence_;
   std::string string_;
-  //Language language_;
+  // Language language_;
  public:
   /// Constructor
   Sequence(std::string& string);
@@ -26,7 +27,7 @@ class Sequence {
   // Sequence reverse();
   std::string prefixes();
   std::string suffixes();
-  //Comparar si una cadena y su reversa son iguales
+  // Comparar si una cadena y su reversa son iguales
   bool isPalindrome();
   friend bool operator==(const Sequence& sequence1, const Sequence& sequence2);
 };
