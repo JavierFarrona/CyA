@@ -1,0 +1,53 @@
+3
+a
+b
+c
+18
+A0
+A1
+B0
+B1
+B2
+C0
+D0
+D1
+E0
+F0
+G0
+H0
+S
+Sa
+Sb
+Sc
+X
+Y
+S
+28
+A0 --> aA1
+A1 --> b
+B0 --> XB1
+B1 --> aB2
+B2 --> X
+C0 --> b
+D0 --> aD1
+D1 --> X
+E0 --> Y
+F0 --> Y
+G0 --> Y
+H0 --> Y
+S --> XA0
+S --> aC0
+S --> bB0
+S --> bD0
+Sa --> a
+Sb --> b
+Sc --> c
+X --> a
+X --> aE0
+X --> b
+X --> bF0
+Y --> a
+Y --> aG0
+Y --> b
+Y --> bH0
+Y --> c
