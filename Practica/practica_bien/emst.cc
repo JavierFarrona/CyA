@@ -114,7 +114,7 @@ void point_set::write_dot(std::ostream& os) const {
     // Asignar un ID único a cada nodo
     for (const auto& point : *this) {
         node_map[point] = node_id++;
-        os << "  " << node_map[point] << " [label=\"" << point.first << "," << point.second << "\"];\n";
+        os << "  " << node_map[point] << " [pos =\"" << point.first << "," << point.second << "!\"];\n";
     }
 
     // Escribir las conexiones (arcos)
